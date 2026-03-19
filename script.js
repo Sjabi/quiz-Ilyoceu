@@ -29,7 +29,6 @@ function toonVraag() {
 
     let vraagElement = document.getElementById("vraag");
     let antwoordenDiv = document.getElementById("antwoorden");
-    delete(document.getElementById("start"));
     // TODO: vraag tonen
     console.log(vragen[huidigeVraag].vraag);
     vraagElement.textContent = vragen[huidigeVraag].vraag;
