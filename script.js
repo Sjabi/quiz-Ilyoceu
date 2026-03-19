@@ -20,6 +20,7 @@ let huidigeVraag = 0;
 document.getElementById("start").onclick = function () {
     huidigeVraag = 0;
     toonVraag();
+    document.getElementById("start").remove();
 };
 
 
@@ -28,10 +29,18 @@ function toonVraag() {
 
     let vraagElement = document.getElementById("vraag");
     let antwoordenDiv = document.getElementById("antwoorden");
-
+    delete(document.getElementById("start"));
     // TODO: vraag tonen
+    console.log(vragen[huidigeVraag].vraag);
+    vraagElement.textContent = vragen[huidigeVraag].vraag;
     // TODO: antwoorden genereren (buttons!)
-
+    for (let i = 0; i < 4; i++)
+    {
+    var x = document.createElement("BUTTON");
+    var t = document.createTextNode(vragen[huidigeVraag].antwoorden[i]);
+    x.appendChild(t);
+    document.body.appendChild(x);
+    }
 }
 
 
